@@ -27,6 +27,8 @@ If service `target_class` is empty, the service rejects the request and the robo
 8. If the target drifts too far while driving, stop forward motion and realign.
 9. Stop when the object distance becomes `0.30m` or less.
 
+While driving, the controller publishes zero velocity when the last valid target detection is older than `drive_target_timeout_sec` (default `0.35 s`, based on receipt time).
+
 The controller never publishes reverse linear velocity.
 
 ## Build
